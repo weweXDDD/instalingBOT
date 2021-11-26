@@ -1,0 +1,13 @@
+<pre><?php
+    $jeden = mysql_real_escape_string($_POST['name']);
+    $dwa = mysql_real_escape_string($_POST['email']);
+    if(!isset($_POST['submit'])){
+        die();
+    }
+    $con = mysqli_connect('localhost', 'root', '', 'instaling');
+    $query = "INSERT INTO test (test, test2) VALUES('$jeden', '$dwa');";
+    if($con->query($query)){
+        echo 'WEW';
+    }
+?>
+</pre>
